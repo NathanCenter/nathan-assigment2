@@ -1,4 +1,4 @@
-package com.assigment2;
+	package com.assigment2;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Assigment_2_App {
 		// we now have the random number now we need user input
 		System.out.println("Pick a number bewteen 1 and 100");
 
-		
+
 		
 		// now we need a for loop that goes up to 5 loops the if statement that loops
 		// moves it the if 
@@ -29,13 +29,21 @@ public class Assigment_2_App {
 
 		int i = 0;
 		// through 5 times had to place it in the while loop and once it reach a true
-		while (i <= 4) {
+		while (i <= 4 ) {
 			i++;
 			// user input
 			Scanner scanner = new Scanner(System.in);
 			String userInputString = scanner.nextLine();
+			System.out.println(i);
 			int userNumber = Integer.parseInt(userInputString);
-			if (userNumber == 0) {
+			   if(userNumber>100 || userNumber<1) {
+				   // see if this is correct where it doesnt count a guess 
+				   System.out.println("You enter a number outside of the 1 - 100 range. Please try again.");
+				   i--;
+				   
+			   }
+			   
+			else if (userNumber == 0) {
 				System.out.println("Your guess is not between 1 and 100, please try again");
 			} else if (userNumber < numberGen) {
 				System.out.println("Please pick a higher number.");
@@ -56,6 +64,8 @@ public class Assigment_2_App {
 				System.out.println("You lose!");
 				System.out.println("The number was to guess was:" + numberGen);
 			}
+			
+			
 
 		}
 
